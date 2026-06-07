@@ -92,7 +92,7 @@ Basic SQL data validation and cleaning
 
                 ┌────────────────────────────┐
                 │   CSV FILE (Dataset)       │
-                │  processed_diwali_sales.csv│
+                │  diwali_sales.csv│
                 └────────────┬───────────────┘
                              │
                              ▼
@@ -115,5 +115,5 @@ Basic SQL data validation and cleaning
         ┌────────────────────────────────────┐
         │  AZURE SQL DATABASE                │
         │  Database: retail_db              │
-        │  Table: processed_diwali_sales    │
+        │  Table: diwali_sales    │
         └────────────────────────────────────┘
