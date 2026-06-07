@@ -88,3 +88,32 @@ End-to-end ETL pipeline
 Data ingestion using ADF
 Source to sink mapping
 Basic SQL data validation and cleaning
+
+
+                ┌────────────────────────────┐
+                │   CSV FILE (Dataset)       │
+                │  processed_diwali_sales.csv│
+                └────────────┬───────────────┘
+                             │
+                             ▼
+        ┌────────────────────────────────────┐
+        │   AZURE BLOB STORAGE (RAW LAYER)   │
+        │   Container: raw-data             │
+        └────────────┬──────────────────────┘
+                             │
+                             │ (Linked Service)
+                             ▼
+        ┌────────────────────────────────────┐
+        │  AZURE DATA FACTORY (ADF)         │
+        │  - Pipeline (Copy Activity)       │
+        │  - Source: Blob Storage           │
+        │  - Sink: SQL Database             │
+        └────────────┬──────────────────────┘
+                             │
+                             │ (Linked Service)
+                             ▼
+        ┌────────────────────────────────────┐
+        │  AZURE SQL DATABASE                │
+        │  Database: retail_db              │
+        │  Table: processed_diwali_sales    │
+        └────────────────────────────────────┘
